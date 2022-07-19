@@ -10,7 +10,7 @@
   <h3 align="center">Backend Curiculum Vitae</h3>
 
   <p align="center">
-    Create a Node.js app for building hire job RESTful APIs using Express.
+    Create a Node.js app for building CV RESTful APIs using Express.
     <br />
     <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
@@ -54,7 +54,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Create a Node.js app for building hire job RESTful APIs using Express.
+Create a Node.js app for building CV RESTful APIs using Express.
 
 ### Built With
 This app was built with some technologies below:
