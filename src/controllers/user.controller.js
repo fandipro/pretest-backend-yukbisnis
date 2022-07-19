@@ -45,8 +45,8 @@ module.exports = {
 
           const obj = {
             user: item,
-            education: education.rows,
-            experience: experience.rows,
+            educations: education.rows,
+            experiences: experience.rows,
           };
 
           return obj;
@@ -103,8 +103,8 @@ module.exports = {
           message: 'Success get detail user',
           data: {
             user: user.rows[0],
-            education: education.rows,
-            experience: experience.rows,
+            educations: education.rows,
+            experiences: experience.rows,
           },
         });
       }
