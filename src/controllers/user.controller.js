@@ -38,13 +38,28 @@ module.exports = {
         });
       }
 
+      const data = await Promise.all(
+        result.rows.map(async (item) => {
+          const education = await educationModel.findBy('user_id', item.id);
+          const experience = await experienceModel.findBy('user_id', item.id);
+
+          const obj = {
+            user: item,
+            education: education.rows,
+            experience: experience.rows,
+          };
+
+          return obj;
+        })
+      );
+
       // Pagination with search
       if (search) {
         const paging = pagination(result.rowCount, page, limit);
         return success(res, {
           code: 200,
           message: `Success get data user`,
-          data: result.rows,
+          data,
           pagination: paging.response,
         });
       }
@@ -54,7 +69,7 @@ module.exports = {
       return success(res, {
         code: 200,
         message: `Success get data user`,
-        data: result.rows,
+        data,
         pagination: paging.response,
       });
     } catch (error) {
@@ -79,77 +94,20 @@ module.exports = {
         });
       }
 
-      return success(res, {
-        code: 200,
-        message: 'Success get detail user',
-        data: user.rows[0],
-      });
-    } catch (error) {
-      return failed(res, {
-        code: 500,
-        message: error.message,
-        error: 'Internal Server Error',
-      });
-    }
-  },
-  // Find education by user id
-  listEducation: async (req, res) => {
-    try {
-      let { id } = req.params;
+      if (user.rowCount) {
+        const education = await educationModel.findBy('user_id', id);
+        const experience = await experienceModel.findBy('user_id', id);
 
-      const user = await userModel.findBy('id', id);
-      // if user not exist
-      if (!user.rowCount) {
-        return failed(res, {
-          code: 404,
-          message: `User with id ${id} not found`,
-          error: 'Not Found',
+        return success(res, {
+          code: 200,
+          message: 'Success get detail user',
+          data: {
+            user: user.rows[0],
+            education: education.rows,
+            experience: experience.rows,
+          },
         });
       }
-
-      const result = await recipeModel.getRecipeByUser(id);
-      redis.setex(`getUserRecipe:${id}`, 3600, JSON.stringify(result.rows));
-      return success(res, {
-        code: 200,
-        message: 'Success get recipe user',
-        data: result.rows,
-      });
-    } catch (error) {
-      return failed(res, {
-        code: 500,
-        message: error.message,
-        error: 'Internal Server Error',
-      });
-    }
-  },
-  // Find experience by user id
-  listExperience: async (req, res) => {
-    try {
-      const { id } = req.params;
-
-      const user = await userModel.findBy('id', id);
-      // if user not exist
-      if (!user.rowCount) {
-        return failed(res, {
-          code: 404,
-          message: `User with id ${id} not found`,
-          error: 'Not Found',
-        });
-      }
-
-      const result = await likedRecipeModel.findBy('liked_recipes.user_id', id);
-
-      redis.setex(
-        `getLikedRecipeUser:${id}`,
-        3600,
-        JSON.stringify(result.rows)
-      );
-
-      return success(res, {
-        code: 200,
-        message: 'Success get liked recipe user',
-        data: result.rows,
-      });
     } catch (error) {
       return failed(res, {
         code: 500,

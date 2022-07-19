@@ -8,8 +8,6 @@ const validation = require('../middlewares/validation');
 const {
   list,
   detail,
-  listEducation,
-  listExperience,
   store,
   update,
   destroy,
@@ -17,8 +15,6 @@ const {
 
 Router.get('/user', list)
   .get('/user/:id', detail)
-  .get('/user/education/:id', listEducation)
-  .get('/user/experience/:id', listExperience)
   .post('/user', upload, user, validation, store)
   .put('/user/:id', upload, user, validation, update)
   .delete('/user/:id', destroy);
