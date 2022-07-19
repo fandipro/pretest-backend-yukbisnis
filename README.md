@@ -124,9 +124,9 @@ DB_PORT=
 
 ## REST API
 
-You can view my Postman collection [here](https://www.postman.com/warped-shadow-374852/workspace/hire-job/overview)
+You can view my Postman collection [here](https://www.postman.com/warped-shadow-374852/workspace/cv/overview)
 </br>
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/19659051-464b712c-0bd0-4453-a821-c407960b798b?action=collection%2Ffork&collection-url=entityId%3D19659051-464b712c-0bd0-4453-a821-c407960b798b%26entityType%3Dcollection%26workspaceId%3D7351a91a-7ccc-45ce-9e08-da0d427bb1ba)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/19659051-cf59c60e-f25b-4daf-8e25-94cfa8f6ba6b?action=collection%2Ffork&collection-url=entityId%3D19659051-cf59c60e-f25b-4daf-8e25-94cfa8f6ba6b%26entityType%3Dcollection%26workspaceId%3Df4a498b5-18d7-41f9-a9d1-9f4f624d882b)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
