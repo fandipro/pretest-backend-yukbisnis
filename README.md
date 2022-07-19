@@ -43,6 +43,7 @@
         <li><a href="#setup-env-example">Setup .env example</a></li>
       </ul>
     </li>
+    <li><a href="#design-database">Design Database</a></li>
     <li><a href="#rest-api">REST API</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#related-project">Related Project</a></li>
@@ -120,6 +121,11 @@ DB_PASSWORD=
 DB_NAME=
 DB_PORT=
 ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Design Database
+<img src="./Design Database.png" alt="Logo">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
