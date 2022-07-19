@@ -14,7 +14,7 @@ module.exports = {
         }
       );
     }),
-  getAllExperience: (field, search, sort, sortType, limit, offset, level) =>
+  getAllExperience: (field, search, sort, sortType, limit, offset) =>
     new Promise((resolve, reject) => {
       db.query(
         `SELECT * FROM experiences WHERE ${field} ILIKE ('%${search}%') ORDER BY ${sort} ${sortType} LIMIT $1 OFFSET $2`,
@@ -36,13 +36,34 @@ module.exports = {
         resolve(res.rows[0].total);
       });
     }),
-  createExperience: () => new Promise((resolve, reject) => {}),
+  createExperience: (data) =>
+    new Promise((resolve, reject) => {
+      const { id, userId, company, position, startDate, endDate, type } = data;
+      db.query(
+        `INSERT INTO experiences (id, user_id, company, position, start_date, end_date, type) VALUES($1, $2, $3, $4, $5, $6, $7)`,
+        [id, userId, company, position, startDate, endDate, type],
+        (err) => {
+          if (err) {
+            reject(new Error(`SQL : ${err.message}`));
+          }
+          resolve(data);
+        }
+      );
+    }),
   updateExperience: (data, id) =>
     new Promise((resolve, reject) => {
-      const { name, email, phone, updated_at } = data;
+      const {
+        userId,
+        company,
+        position,
+        startDate,
+        endDate,
+        type,
+        updatedAt,
+      } = data;
       db.query(
-        `UPDATE experiences SET name = $1, email = $2, phone = $3, updated_at = $4 WHERE id = $5`,
-        [name, email, phone, updated_at, id],
+        `UPDATE experiences SET user_id = $1, company = $2, position = $3, start_date = $4, end_date = $5, type = $6, updated_at = $7 WHERE id = $8`,
+        [userId, company, position, startDate, endDate, type, updatedAt, id],
         (err) => {
           if (err) {
             reject(new Error(`SQL : ${err.message}`));

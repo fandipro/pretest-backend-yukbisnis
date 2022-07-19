@@ -27,7 +27,7 @@ module.exports = {
         sort,
         sortType,
         limit,
-        offset,
+        offset
       );
 
       if (!result.rowCount) {
@@ -204,7 +204,7 @@ module.exports = {
       // response REST API success
       return success(res, {
         code: 200,
-        message: 'Success create recipe',
+        message: 'Success create user',
         data: result,
       });
     } catch (error) {
@@ -276,7 +276,7 @@ module.exports = {
       const result = await userModel.updateUser(data, id);
       return success(res, {
         code: 200,
-        message: 'Success edit profile',
+        message: 'Success update user',
         data: result,
       });
     } catch (error) {
@@ -307,7 +307,7 @@ module.exports = {
       let { photo } = user.rows[0];
       if (req.file) {
         if (photo) {
-          deleteGoogleDrive(photo);
+          deleteFile(`public/uploads/${photo}`);
         }
       }
 
