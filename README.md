@@ -15,7 +15,7 @@
     <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://peworld-hire.herokuapp.com/">View Web Service</a>
+    <a href="https://cv-yukbisnis.herokuapp.com/">View Web Service</a>
     ·
     <a href="https://github.com/altrawan/pretest-backend-yukbisnis/issues">Report Bug</a>
     ·
@@ -79,7 +79,7 @@ This is an example of how to list things you need to use the software and how to
 ### Requirements
 * [Node.js](https://nodejs.org/en/)
 * [Postman](https://www.getpostman.com/) for testing
-* [Database](./blanja.sql)
+* [Database](./cv.sql)
 
 ### Installation
 
@@ -144,9 +144,9 @@ Contributions are what make the open source community such an amazing place to b
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Related Project
-:rocket: [`Backend Peworld Hire`](https://github.com/altrawan/pretest-backend-yukbisnis)
+:rocket: [`Backend Curiculum Vitae`](https://github.com/altrawan/pretest-backend-yukbisnis)
 
-:rocket: [`Web Service`](https://peworld-hire.herokuapp.com/)
+:rocket: [`Web Service`](https://cv-yukbisnis.herokuapp.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
