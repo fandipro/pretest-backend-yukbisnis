@@ -63,6 +63,7 @@ This app was built with some technologies below:
 - [PostgreSQL](https://www.postgresql.org/)
 - [Multer](https://www.npmjs.com/package/multer/)
 - [CORS](https://www.npmjs.com/package/cors/)
+- [Express Validator](https://express-validator.github.io/docs/)
 - and other
 
 <p align="right">(<a href="#top">back to top</a>)</p>
