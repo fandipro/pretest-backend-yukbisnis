@@ -1,0 +1,40 @@
+{
+  "name": "cv-backend",
+  "version": "1.0.0",
+  "description": "Create a Node.js app for building cv RESTful APIs using Express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altrawan/pretest-backend-yukbisnis.git"
+  },
+  "keywords": [
+    "Express.js",
+    "Node.js",
+    "PostgreSQL",
+    "REST",
+    "API"
+  ],
+  "author": "Nur Muhammad Alif Putra Setiawan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/altrawan/pretest-backend-yukbisnis/issues"
+  },
+  "homepage": "https://github.com/altrawan/pretest-backend-yukbisnis#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validation": "^4.1.0",
+    "helmet": "^5.1.0",
+    "http-status": "^1.5.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.7.3",
+    "uuid": "^8.3.2",
+    "xss-clean": "^0.1.1"
+  }
+}
