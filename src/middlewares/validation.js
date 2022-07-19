@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const { failed } = require('../helpers/response');
+const deleteFile = require('../utils/deleteFile');
 
 module.exports = (req, res, next) => {
   try {
@@ -9,6 +10,10 @@ module.exports = (req, res, next) => {
     }
     const extractedErrors = [];
     errors.array().map((err) => extractedErrors.push(err.msg));
+
+    if (req.file) {
+      deleteFile(req.file.path);
+    }
 
     return failed(res, {
       code: 422,
