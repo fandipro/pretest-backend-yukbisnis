@@ -263,10 +263,8 @@ module.exports = {
       }
 
       let { photo } = user.rows[0];
-      if (req.file) {
-        if (photo) {
-          deleteFile(`public/uploads/${photo}`);
-        }
+      if (photo) {
+        deleteFile(`public/uploads/${photo}`);
       }
 
       await userModel.deleteUser(id);
