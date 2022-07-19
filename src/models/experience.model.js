@@ -38,10 +38,10 @@ module.exports = {
     }),
   createExperience: (data) =>
     new Promise((resolve, reject) => {
-      const { id, userId, company, position, startDate, endDate, type } = data;
+      const { id, userId, company, position, address, startDate, endDate, type } = data;
       db.query(
-        `INSERT INTO experiences (id, user_id, company, position, start_date, end_date, type) VALUES($1, $2, $3, $4, $5, $6, $7)`,
-        [id, userId, company, position, startDate, endDate, type],
+        `INSERT INTO experiences (id, user_id, company, position, address, start_date, end_date, type) VALUES($1, $2, $3, $4, $5, $6, $7, $8)`,
+        [id, userId, company, position, address, startDate, endDate, type],
         (err) => {
           if (err) {
             reject(new Error(`SQL : ${err.message}`));
@@ -56,14 +56,15 @@ module.exports = {
         userId,
         company,
         position,
+        address,
         startDate,
         endDate,
         type,
         updatedAt,
       } = data;
       db.query(
-        `UPDATE experiences SET user_id = $1, company = $2, position = $3, start_date = $4, end_date = $5, type = $6, updated_at = $7 WHERE id = $8`,
-        [userId, company, position, startDate, endDate, type, updatedAt, id],
+        `UPDATE experiences SET user_id = $1, company = $2, position = $3, address = $4, start_date = $5, end_date = $6, type = $7, updated_at = $8 WHERE id = $9`,
+        [userId, company, position, address, startDate, endDate, type, updatedAt, id],
         (err) => {
           if (err) {
             reject(new Error(`SQL : ${err.message}`));

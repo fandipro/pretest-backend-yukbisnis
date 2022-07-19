@@ -47,7 +47,7 @@ app.get('/', (req, res) =>
 );
 
 // Main Route
-// app.use(require('./src/routes/education.route'));
+app.use(require('./src/routes/education.route'));
 app.use(require('./src/routes/experience.route'));
 app.use(require('./src/routes/user.route'));
 
