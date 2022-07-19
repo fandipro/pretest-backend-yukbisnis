@@ -38,10 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-// ejs
-app.set('views', `${__dirname}/src/views`);
-app.set('view engine', 'ejs');
-
+// static files
 app.use(express.static('public'));
 
 // Root Route
