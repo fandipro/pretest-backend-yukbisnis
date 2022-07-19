@@ -267,7 +267,15 @@ module.exports = {
         deleteFile(`public/uploads/${photo}`);
       }
 
+      // delete data education
+      const education = await educationModel.findBy('user_id', id);
+      await educationModel.deleteEducation(education.rows[0].id);
+      // delete data experience
+      const experience = await experienceModel.findBy('user_id', id);
+      await experienceModel.deleteExperience(experience.rows[0].id);
+      // delete data user
       await userModel.deleteUser(id);
+
       return success(res, {
         code: 200,
         message: 'Success delete user',
