@@ -4,10 +4,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/altrawan/pretest-backend-yukbisnis">
-    <img src="https://lh3.googleusercontent.com/d/1WVrwo9yY-SQ7rh7SpYUOvykp1hWVyTNo" alt="Logo" width="400px">
+    <img src="https://i.postimg.cc/Twvhc0s1/cv-icon-237602-removebg-preview.png" alt="Logo" width="200px">
   </a>
 
-  <h3 align="center">Peworld Hire : Backend Hire Job</h3>
+  <h3 align="center">Backend Curiculum Vitae</h3>
 
   <p align="center">
     Create a Node.js app for building hire job RESTful APIs using Express.
@@ -85,17 +85,17 @@ This is an example of how to list things you need to use the software and how to
 
 - Clone the Repo
 ```
-git clone https://github.com/altrawan/hire-job-api.git
+git clone https://github.com/altrawan/pretest-backend-yukbisnis.git
 ```
 - Go To Folder Repo
 ```
-cd hire-job-api
+cd pretest-backend-yukbisnis
 ```
 - Install Module
 ```
 npm install
 ```
-- Make a new database and import [peworld.sql](./blanja.sql)
+- Make a new database and import [cv.sql](./cv.sql)
 - <a href="#setup-env-example">Setup .env</a>
 - Type ` npm run dev` To Start Development
 - Type ` npm run start` To Start Production
